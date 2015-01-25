@@ -1,4 +1,4 @@
-*v0.9 build 7 (master branch)*
+*v1.0 build 1 (master branch)*
 
 #Yadif
 Yadif is a lightweight, nonintrusive C++11 dependency injection framework. It is distributed as a single header. Concepts are (loosely) modelled after the Java Guice framework. The name actually stands for **Y**et **A**nother **D**ependency **I**njection **F**ramework.

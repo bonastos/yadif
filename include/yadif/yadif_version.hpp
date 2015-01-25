@@ -10,7 +10,7 @@
 namespace yadif {
 
     // These numbers are maintained by a script
-    Version libraryVersion( 0, 9, 7, "master" );
+    Version libraryVersion( 1, 0, 1, "master" );
 }
 
 #endif//ndef YADIF_VERSION_HPP

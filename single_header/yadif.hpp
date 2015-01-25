@@ -1,6 +1,6 @@
 /*
- *  YADIF v0.9 build 7 (master branch)
- *  Generated: 2015-01-21 13:30:54.244261
+ *  YADIF v1.0 build 1 (master branch)
+ *  Generated: 2015-01-25 23:17:37.151769
  *  ----------------------------------------------------------
  *  This file has been merged from multiple headers. Please don't edit it directly
  *  Copyright (c) 2015 Dirk Bonekamper. All rights reserved.
