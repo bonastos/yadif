@@ -58,14 +58,14 @@ int main()
 Lets look at what's going on here.
 
 
-```
+```c++
 #include <yadif.hpp>
 
 ```
 
 You have to include the Yadif header to use Yadif. Obvious, but should be mentioned anyway.
 
-Some std headers that are needed for for an compiling example. Followed by the actual classes we want to use in our example:
+Some std headers that are needed for an compiling example. Followed by the actual classes we want to use in our example:
 
 * An interface called `Named`.
 * A class `World` that implements the `Named`interface.
