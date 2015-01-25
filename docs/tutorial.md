@@ -9,7 +9,7 @@ In Yadif the rules for object creation are called bindings. There are two kinds 
 
 Here's a complete example. 
 
-```
+```c++
 #include <yadif.hpp>
 #include <string>
 #include <iostream>
@@ -84,7 +84,7 @@ In the case of the `WorldProvider`, we just have to specify the type to be creat
 
 Now we are ready to configure our bindings. For this we must implement a module.
 
-```
+```c++
 struct ExampleModule : public yadif::Module
 {
   void configure() const override
@@ -97,13 +97,13 @@ struct ExampleModule : public yadif::Module
 
 Modules are used by Yadif to collect bindings for later use. Each module must implement the `Module` interface and overwrite the `configure()` method. All bindings are defined within the `configure()` method.
 
-```
+```c++
 bind<Named>().to<World>();
 ```
 
 The first binding is a type binding. It binds the interface `Named`to the implementation `World`. As a binding operates on types, the template parameter has to be supplied explicitly.
 
-```
+```c++
 bind<World>().toProvider(WorldProvider{});
 bind<Hello>().toProvider(HelloProvider{});
 ```  
@@ -112,13 +112,13 @@ The other bindings are provider bindings. They register a provider object that w
 
 Now we are ready to use the module.
 
-```
+```c++
 auto injector = yadif::Injector{ExampleModule{}};
 ```
 
 An Injector collects bindings from a list of modules. After it is constructed, you may ask for a an instance of a bound type.
 
-```
+```c++
 auto helloPtr = injector.get<Hello>();
 	
 ```
@@ -127,7 +127,7 @@ The injectors `get()` method always returns a shared pointer to the requested ty
 
 And finally we use the injected object.
 
-```
+```c++
 std::cout << helloPtr->msg() << "\n";
 ```
 
@@ -145,7 +145,7 @@ Let's look at an example, it's not as complicated as it sounds.
 
 Assume we have an interface `Guest` that has been implemented by the classes `Friend` and `Celebrity`. We could use the following module.
 
-```
+```c++
 using yadif::Annotation;
 struct Special {};
 
@@ -169,7 +169,7 @@ int main()
 
 I we had a `Host` class that takes references to two Guest objects in its constructor, we could use the following provider:
 
-```
+```c++
 using HostProvider = Provider<Host,
                              Ref<Guest>,
                              Ref<Guest, Annotation<Special>>
@@ -180,7 +180,7 @@ using HostProvider = Provider<Host,
 
 As providers are central to Yadif, they should be easy to write. Therefore Yadif has a rather flexible notion of providers.
 
-```
+```c++
 bind<interface>().toProvider(P);
 ``` 
 
