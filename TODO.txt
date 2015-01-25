@@ -1,0 +1,8 @@
+* cleanup version.hpp
+* automated versioning, single header generartion
+* rewrite scope to use one abstract method
+* travis integration
+* allow binding of modules in configure - refactor Module not to use mutable
+* is_provider<> Predicate - provider_traits.hpp
+* pretty type name
+* dependency graph
