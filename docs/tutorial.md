@@ -2,7 +2,7 @@
 
 ###Installation
 
-First, either grab `yadif.hpp` from the `single_header` directory or down load it from [here](https://raw.githubusercontent.com/bonastos/yadif/master/single_header/yadif.hpp). Put it in your include path. Your done.
+First, either grab `yadif.hpp` from the `single_header` directory or download it from [here](https://raw.githubusercontent.com/bonastos/yadif/master/single_header/yadif.hpp). Put it in your include path. Your done.
 
 ###Example
 
