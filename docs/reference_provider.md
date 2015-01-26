@@ -6,7 +6,7 @@ Yadif contains several convenience provider templates to simplify the writing of
 
 The variadic `Provider` template is used to inject bound instances into a constructor.
 
-```
+```c++
 template <typename T, typename... Args>
 struct Provider {
   std::shared_ptr<T> operator() (Injector& injector);
@@ -17,7 +17,7 @@ The first template argument is the type to be created, The following arguments s
 
 Example:
 
-```
+```c++
 struct X {
   X(const A& a, B* b, std::shared_ptr<C> c);
   ...
@@ -42,7 +42,7 @@ The function call operator of the generated type uses the passed injector to cre
 
 The `InstanceProvider` template is used to bind a constant instance.
 
-```
+```c++
 template <typename T> 
 class InstanceProvider {
 public:
@@ -57,7 +57,7 @@ It copies its constructor argument and always returns a shared_ptr to the copied
 
 The helper function
 
-```
+```c++
 template <typename T>
 InstanceProvider<T> makeInstanceProvider(T val);
 ```
@@ -66,9 +66,9 @@ can be used to create an `InstanceProvider` and automatically deduce it's templa
 
 ##ReferenceProvider<>
 
-The `InstanceProvider` template is used to bind a reference to an existing object.
+The `ReferenceProvider` template is used to bind a reference to an existing object.
 
-```
+```c++
 template <typename T> 
 class ReferenceProvider {
 public:
@@ -85,7 +85,7 @@ It stores the reference argument and returns a shared_ptr containing the address
 
 The helper function
 
-```
+```c++
 template <typename T>
 ReferenceProvider<T> makeReferenceProvider(T& ref);
 ```
