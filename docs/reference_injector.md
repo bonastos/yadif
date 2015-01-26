@@ -4,7 +4,7 @@ The `Injector` class collects bindings and uses them to create instances.
 
 ###Construction
 
-```
+```c++
 template <typename... Modules>
 Injector(Modules... modules);
 ```
@@ -12,7 +12,7 @@ Injector(Modules... modules);
 The variadic constructor takes a list of modules and collects their bindings.
 
 
-```
+```c++
 template <typename... Modules>
 Injector(const Injector& injector, Modules... modules);
 ```
@@ -26,7 +26,7 @@ Both constructors throw `IllegalBinding` if a binding is incomplete or contains 
 
 ###Instance Creation
 
-```
+```c++
 std::shared_ptr<Interface> Injector::get<interface_key>();
 ```
 
