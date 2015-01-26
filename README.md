@@ -9,7 +9,7 @@ Dependency injection is an object oriented design pattern that uses inversion of
 
 Although widely used in the Java community, in C++ dependency injection is mostly noted by its absence. This probably stems from the fact that C++ doesn't have programmable annotations or a class loader that assists with object creation. In C++ every object must be created by calling a constructor. This used to mean that a lot of factory objects had to be written, and dependency injection was just to tedious to be helpful.
 
-But C++11 changed that picture. Variadic templates allow to write functions that overload on a variable number of arguments. A good example (and also used for object creation) is *std::make_shared<>*. Yadif uses similar techniques to simplify the generation of factory objects.
+But C++11 changed the picture. Variadic templates allow to write functions that overload on a variable number of arguments. A good example (and also used for object creation) is *std::make_shared<>*. Yadif uses similar techniques to simplify the generation of factory objects.
 
 ###Documentation
 
@@ -22,6 +22,6 @@ Currently, Yadif compiles with clang 3.5 and gcc 4.9.
 
 ###Acknowledgements
 
-* Thanks to the Guice community for providing a good role model.
-* Thanks to PhilSquared for the single header idea. And, of course, for Catch.
+* Thanks to the [Guice](https://github.com/google/guice) community for providing a good role model.
+* Thanks to [philsquared](https://github.com/philsquared) for the single header idea. And, of course, for [Catch](https://github.com/philsquared/Catch).
 
