@@ -1,11 +1,12 @@
 #Tutorial
 
-First, take the `yadif.hpp` from the `single_header` directory and put it in your include path.
+###Installation
+
+First, either grab `yadif.hpp` from the `single_header` directory or down load it from [here](https://raw.githubusercontent.com/bonastos/yadif/master/single_header/yadif.hpp). Put it in your include path. Your done.
 
 ###Example
 
 In Yadif the rules for object creation are called bindings. There are two kinds of bindings. Type bindings are used to bind an implementation to an interface. The second kind, provider bindings, define how an object of a specified type is created. This is done by registering a factory object that creates an instance of the bound type. These factories are called providers.
-
 
 Here's a complete example. 
 
@@ -60,18 +61,17 @@ Lets look at what's going on here.
 
 ```c++
 #include <yadif.hpp>
-
 ```
 
-You have to include the Yadif header to use Yadif. Obvious, but should be mentioned anyway.
+You have to include the Yadif header to use Yadif. You probably guessed that.
 
-Some std headers that are needed for an compiling example. Followed by the actual classes we want to use in our example:
+It's followed by some std headers that are needed for a compiling example. Next come the actual classes we want to use in our example:
 
 * An interface called `Named`.
 * A class `World` that implements the `Named`interface.
 * A class `Hello` that accepts a reference to a `Named` and uses it in it's definition. 
 
-Next we define two type aliases for later use in our binding.
+Then we define two type aliases for later use in our bindings.
 
 ```
 using WorldProvider = yadif::Provider<World>;
