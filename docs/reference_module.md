@@ -2,7 +2,7 @@
 
 `Module` is an interface for specifying bindings.
 
-```
+```c++
 namespace yadif {
   struct Module {
     virtual void configure() const = 0;
@@ -23,7 +23,7 @@ Note that a type is used as annotation. If an annotation is present, it must be 
 
 Within the overridden `configure()` method, each binding starts by calling the protected `bind()` method.
 
-```
+```c++
 bind<interface key>()
 ```
 
@@ -33,7 +33,7 @@ This function returns a temporary `Binder`object that is used to collect the oth
 
 A type binding is used to bind an interface type to an implementation type. It is specified by appending
 
-```
+```c++
 .to<implementation_key>()
 ``` 
 
@@ -43,7 +43,7 @@ to the `bind()` specification.
 
 A provider binding binds an instance of a callable provider to a type.  It is specified by appending
 
-```
+```c++
 .toProvider(P)
 ``` 
 
@@ -64,13 +64,13 @@ So a provider may be a function, a functor or a lambda. It may return a raw poin
 
 For binding an interface as a singleton instance, append
 
-```
+```c++
 .asSingleton()
 ``` 
 
 or
 
-```
+```c++
 .asEagerSingleton()
 ```
 
